@@ -1,4 +1,4 @@
 img {
     width: 250px;  /* Set the width of the image */
-    height: 375px;  /* Maintain aspect ratio */
+    height: auto;  /* Maintain aspect ratio */
 }
