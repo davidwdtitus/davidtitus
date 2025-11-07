@@ -56,45 +56,72 @@
       text-decoration: underline;
     }
 
-    .main-content {
-      display: flex;
-      justify-content: flex-start; /*align to the left, not centered */
-      align-items: flex-start;
-      gap: 50px;
-      padding: 3rem;
-      max-width: 1500px;
-      margin: auto;
-    }
+   .main-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 3rem;
+  max-width: 1500px; /* fine to keep this */
+  margin: 0 auto; /* centers everything within the screen */
+  box-sizing: border-box;
+}
 
-    .photo img {
-      max-width: 250px;
-      
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    }
+.photo img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
 
-    .text {
-      max-width: 1500px;
-      font-size: 1.1rem;
-      line-height: 1.7rem;
-    }
+/* Make text take remaining space */
+.text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
 
-    .text p {
-      margin-bottom: 1.5rem;
-    }
+/* --- RESPONSIVE MOBILE FIX --- */
+@media (max-width: 750px) {
+  .main-content {
+    flex-direction: column;  /* stack vertically */
+    align-items: center;     /* center photo and text */
+    text-align: left;        /* keep normal paragraph alignment */
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
 
-    .text a {
-      color: #0055a5;
-      text-decoration: underline;
-    }
+  .photo img {
+    max-width: 70%;  /* scales image for smaller screens */
+    height: auto;
+  }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
+  .text {
+    width: 100%;      /* make text use full width below image */
+    flex: none;
+  }
+}
+
+@media (max-width: 900px) {
+  header {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 1.25rem;  /* smaller side padding on phones */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+}
+
+    
   </style>
 </head>
 
