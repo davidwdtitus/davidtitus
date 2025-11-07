@@ -98,9 +98,10 @@
   }
   
   .photo img {
-    max-width: 70%;  /* scales image for smaller screens */
-    height: auto;
-    justify-content: center;
+  display: block;
+  margin: 0 auto;          /* centers the image even if flex fails */
+  max-width: 70%;          /* you can adjust to taste */
+  height: auto;
   }
 
   .text {
